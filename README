@@ -1,0 +1,20 @@
+TracのチケットをJIRAに取り込むJellyファイルを生成する
+スクリプトです。オリジナルは以下のサイトにあります。
+
+yet another Trac 2 JIRA import
+http://confluence.atlassian.com/display/JIRACOM/yet+another+Trac+2+JIRA+import
+
+* 使い方
+コマンドプロンプトから以下のコマンドを実行します。
+
+python yatrac2jira-v3.py trac-root JIRATAG project-owner > JIRATAG.jelly
+
+trac-root: Tracのプロジェクトのパスを指定します。
+JIRATAG: JIRAでのプロジェクトのタグを指定します。
+project-owner: JIRAでのプロジェクトオーナーを指定します。
+
+JIRATAG.jellyに出力されるのでJIRAで読み込みます。
+
+* 動作環境について
+
+Windows上のPython 2.5 + Trac 0.10.4で動作確認しています。
