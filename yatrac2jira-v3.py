@@ -42,10 +42,7 @@ from trac.ticket.query import Query
 from trac.web.href import Href
 
 usermap = {
-    'randomguy' : 'newname',
-    'admin' : 'ktana',
-    'anonymous' : 'ktana',
-    'nyma': 'nyama'
+    'randomguy' : 'newname'
 }
 
 # Convert #111 -> TST-111 ?
@@ -116,15 +113,6 @@ def mapIssueType(type):
     elif type == "Highlevel":
         return "Improvement"
 
-    elif type == u'仕様変更':
-        return 'Improvement'
-    elif type == u'不具合':
-        return "Bug"
-    elif type == u'作業' or type == u'連絡' or type == u'課題':
-        return "Task"
-    elif type == u'機能追加':
-        return "New Feature"
-
     sys.stderr.write("Fallback to Bug for "+type+"\n")
     return "Bug"
 
@@ -154,19 +142,6 @@ def mapPriority(p):
     if p == "Trivial":
         return "Trivial"
     if p == "Lowest":
-        return "Trivial"
-
-    if p == u"重大":
-        return "Blocker"
-    if p == "緊急":
-        return "Critical"
-    if p == "高":
-        return "Major"
-    if p == "中":
-        return "Minor"
-    if p == "低":
-        return "Trivial"
-    if p == "保留":
         return "Trivial"
     sys.stderr.write("Fallback to major priority for "+p+"\n")
     return "Major"
